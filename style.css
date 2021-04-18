@@ -1,0 +1,141 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+}
+
+@keyframes rotate-anim {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  5% {
+    transform: translateY(5px) rotateY(18deg);
+  }
+  20% {
+    transform: translateY(35px) rotateY(72deg);
+  }
+  25% {
+    transform: translateY(40px) rotateY(90deg);
+  }
+  30% {
+    transform: translateY(35px) rotateY(108deg);
+  }
+  45% {
+    transform: translateY(5px) rotateY(162deg);
+  }
+  50% {
+    transform: translateY(0) rotateY(180deg);
+  }
+  55% {
+    transform: translateY(5px) rotateY(198deg);
+  }
+  70% {
+    transform: translateY(35px) rotateY(252deg);
+  }
+  75% {
+    transform: translateY(40px) rotateY(270deg);
+  }
+  80% {
+    transform: translateY(35px) rotateY(288deg);
+  }
+  95% {
+    transform: translateY(5px) rotateY(342deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(360deg);
+  }
+}
+@keyframes rotate-anim-lock {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  5% {
+    transform: translateY(-3px) rotateY(-18deg);
+  }
+  20% {
+    transform: translateY(-36px) rotateY(-72deg);
+  }
+  25% {
+    transform: translateY(-40px) rotateY(-90deg);
+  }
+  30% {
+    transform: translateY(-36px) rotateY(-108deg);
+  }
+  50% {
+    transform: translateY(0) rotateY(-180deg);
+  }
+  70% {
+    transform: translateY(-37px) rotateY(-252deg);
+  }
+  75% {
+    transform: translateY(-40px) rotateY(-270deg);
+  }
+  80% {
+    transform: translateY(-37px) rotateY(-288deg);
+  }
+  95% {
+    transform: translateY(-3px) rotateY(-342deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(-360deg);
+  }
+}
+.wrapper {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 300px;
+  perspective: 500px;
+}
+.wrapper .cube {
+  width: inherit;
+  height: inherit;
+  display: block;
+  transform-style: preserve-3d;
+  animation: rotate-anim 6s infinite linear;
+}
+.wrapper .cube .cube-titele {
+  animation: rotate-anim-lock 6s infinite linear;
+  color: #fff;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  line-height: 300px;
+  font-weight: bold;
+  font-size: 76px;
+  width: 100%;
+  height: 100%;
+}
+.wrapper .cube .side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  line-height: 300px;
+  font-weight: bold;
+  font-size: 76px;
+}
+.wrapper .cube .side.top {
+  transform: rotateX(90deg) translateZ(150px);
+}
+.wrapper .cube .side.bottom {
+  transform: rotateX(-90deg) translateZ(150px);
+}
+.wrapper .cube .side.left {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+.wrapper .cube .side.right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+.wrapper .cube .side.front {
+  transform: translateZ(150px);
+}
+.wrapper .cube .side.back {
+  transform: rotateY(180deg) translateZ(150px);
+}
